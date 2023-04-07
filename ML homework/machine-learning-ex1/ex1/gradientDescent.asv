@@ -29,8 +29,7 @@ for iter = 1:num_iters
 
     % ============================================================
 
-    % Save the cost J in every iteration   
-    %每次迭代后得到的θ
+    % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
 
 end

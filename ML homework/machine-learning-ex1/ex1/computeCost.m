@@ -14,6 +14,8 @@ J = 0;
 %               You should set J to the cost.
 
 predictions = X * theta;
+%得到m*1的矩阵，即为y_hat = θ_0*1 + θ_1*x1
+
 sqrErrors = (predictions - y) .^ 2;
 J = 1 / (2 * m) * sum(sqrErrors);
 

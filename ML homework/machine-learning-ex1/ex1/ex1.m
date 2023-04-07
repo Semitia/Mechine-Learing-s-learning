@@ -40,6 +40,7 @@ pause;
 fprintf('Plotting Data ...\n')
 data = load('ex1data1.txt');
 X = data(:, 1); y = data(:, 2);
+%% X为ex1data1.txt中的第一列数据；Y则为第二列数据
 m = length(y); % number of training examples
 
 % Plot Data
@@ -50,7 +51,7 @@ fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 %% =================== Part 3: Cost and Gradient descent ===================
-
+%X加一列1
 X = [ones(m, 1), data(:,1)]; % Add a column of ones to x
 theta = zeros(2, 1); % initialize fitting parameters
 
@@ -103,6 +104,7 @@ pause;
 fprintf('Visualizing J(theta_0, theta_1) ...\n')
 
 % Grid over which we will calculate J
+% 的到在一定范围内（-10,10）有100个等距点的向量
 theta0_vals = linspace(-10, 10, 100);
 theta1_vals = linspace(-1, 4, 100);
 
@@ -120,6 +122,7 @@ end
 
 % Because of the way meshgrids work in the surf command, we need to
 % transpose J_vals before calling surf, or else the axes will be flipped
+% 需要变为转置矩阵
 J_vals = J_vals';
 % Surface plot
 figure;

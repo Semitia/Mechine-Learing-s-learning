@@ -9,6 +9,7 @@ function [X_norm, mu, sigma] = featureNormalize(X)
 X_norm = X;
 mu = zeros(1, size(X, 2));
 sigma = zeros(1, size(X, 2));
+%均值与标准差
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: First, for each feature dimension, compute the mean
@@ -29,7 +30,7 @@ sigma = zeros(1, size(X, 2));
 mu = mean(X);
 sigma = std(X, 1, 1);
  
-for i = 1:size(X, 2)
+for i = 1:size(X, 2)%列的个数
     X_norm(:, i) = (X(:, i) - mu(i)) ./ sigma(i);
 end
 
